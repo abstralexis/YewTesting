@@ -17,6 +17,8 @@ fn App() -> Html {
     let style = use_style!(
         r#"
             background-color: black;
+            display: grid;
+            place-items: center;
 
             p {
                 color: white;
