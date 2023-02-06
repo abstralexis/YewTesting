@@ -1,7 +1,7 @@
 #![allow(non_snake_case)]   // Crate name isn't snake case
 
 use yew::prelude::*;
-use stylist::yew::use_style;
+use stylist::{css, {yew::{use_style, Global}}};
 
 #[function_component]
 fn App() -> Html {
@@ -24,11 +24,18 @@ fn App() -> Html {
         "#
     );
 
+    let globalstyle = css!(
+        "background-color: black;"
+    );
+
     html! {
-        <div class={style}>
-            <button {onclick}>{ "+1" }</button>
-            <p>{ *counter }</p>
-        </div>
+        <>
+            <Global css={globalstyle}/>
+            <div class={style}>
+                <button {onclick}>{ "+1" }</button>
+                <p>{ *counter }</p>
+            </div>
+        </>
     }
 }
 

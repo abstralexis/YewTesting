@@ -16,4 +16,4 @@ Cargo.lock
 
 # WASM
 
-/dist
+/dist/
