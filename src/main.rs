@@ -1,6 +1,7 @@
 #![allow(non_snake_case)]   // Crate name isn't snake case
 
 use yew::prelude::*;
+use stylist::yew::use_style;
 
 #[function_component]
 fn App() -> Html {
@@ -13,8 +14,18 @@ fn App() -> Html {
         }
     };
 
+    let style = use_style!(
+        r#"
+            background-color: black;
+
+            p {
+                color: white;
+            }
+        "#
+    );
+
     html! {
-        <div>
+        <div class={style}>
             <button {onclick}>{ "+1" }</button>
             <p>{ *counter }</p>
         </div>
